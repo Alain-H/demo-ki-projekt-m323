@@ -81,7 +81,7 @@ docker compose --env-file supabase/.env pull
 3. Inhalt von [`init.sql`](init.sql) einfügen und ausführen.
 
 ### 6. App öffnen
-<http://localhost:3000>
+<http://localhost:3030>
 
 ---
 
@@ -104,7 +104,7 @@ docker compose --env-file supabase/.env down -v       # inkl. Volumes (DB-Daten 
 
 Beispiel:
 ```bash
-curl -X POST http://localhost:3000/api/grades \
+curl -X POST http://localhost:3030/api/grades \
   -H "Content-Type: application/json" \
   -d '{"student_name":"Diana","subject":"Englisch","grade":5.5,"weight":1}'
 ```
