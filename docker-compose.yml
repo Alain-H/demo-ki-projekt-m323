@@ -1,0 +1,26 @@
+# Top-level Compose-Datei fuer das M323 Demo
+#
+# Bindet die offizielle self-hosted Supabase-Stack ein (supabase/docker-compose.yml)
+# und ergaenzt sie um unseren Notenrechner-Service "app".
+#
+# Start:  docker compose --env-file supabase/.env up -d
+#         (oder: cp supabase/.env.example supabase/.env  und dann oben ohne --env-file)
+
+include:
+  - path: supabase/docker-compose.yml
+    env_file: supabase/.env
+
+services:
+  app:
+    build: ./app
+    container_name: m323-notenrechner
+    restart: unless-stopped
+    depends_on:
+      kong:
+        condition: service_started
+    environment:
+      SUPABASE_URL: http://kong:8000
+      SUPABASE_ANON_KEY: ${ANON_KEY}
+      PORT: 3000
+    ports:
+      - "3000:3000"

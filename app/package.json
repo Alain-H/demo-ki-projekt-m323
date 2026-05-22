@@ -1,0 +1,14 @@
+{
+  "name": "notenrechner-m323",
+  "version": "1.0.0",
+  "description": "M323 Demo: Notenrechner mit funktionaler Programmierung",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
+    "express": "^4.19.2"
+  }
+}

@@ -1,0 +1,8 @@
+node_modules/
+app/node_modules/
+*.log
+.env
+supabase/.env
+supabase/volumes/db/data/
+supabase/volumes/storage/
+.DS_Store
